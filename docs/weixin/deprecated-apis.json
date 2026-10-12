@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "title": "微信小程序废弃 API 单一事实源",
+    "note": "本文件是废弃名单的唯一权威来源：AGENTS.md 的禁用清单、ESLint no-restricted 配置（scripts/build-eslint-config.mjs 生成）、人工核对表全部从这里派生。改这里，处处生效。",
+    "updated": "2026-10-13",
+    "source_hint": "依据微信开放文档 wx.getSystemInfoSync 页『从基础库 2.20.1 开始，本接口停止维护』及其列出的五个替代 API"
+  },
+  "deprecated_apis": [
+    {
+      "name": "wx.getSystemInfoSync",
+      "kind": "sync",
+      "deprecated_since": "2.20.1",
+      "official_status": "停止维护（可继续运行但不再维护，官方明确要求迁移）",
+      "replaced_by": ["wx.getSystemSetting", "wx.getAppAuthorizeSetting", "wx.getDeviceInfo", "wx.getWindowInfo", "wx.getAppBaseInfo"],
+      "migration_note": "按所需字段拆分：system→getSystemSetting，授权→getAppAuthorizeSetting，设备→getDeviceInfo，窗口→getWindowInfo，基础→getAppBaseInfo"
+    },
+    {
+      "name": "wx.getSystemInfo",
+      "kind": "async",
+      "deprecated_since": "2.20.1",
+      "official_status": "停止维护",
+      "replaced_by": ["wx.getSystemSetting", "wx.getAppAuthorizeSetting", "wx.getDeviceInfo", "wx.getWindowInfo", "wx.getAppBaseInfo"],
+      "migration_note": "同上，异步回调改 Promise 风格调用对应新 API"
+    },
+    {
+      "name": "wx.getSystemInfoAsync",
+      "kind": "async",
+      "deprecated_since": "2.20.1",
+      "official_status": "停止维护",
+      "replaced_by": ["wx.getDeviceInfo", "wx.getWindowInfo", "wx.getAppBaseInfo"],
+      "migration_note": "字段拆分迁移；窗口与设备信息分别获取"
+    }
+  ],
+  "sdk_thresholds": [
+    { "feature": "wx.request enableChunked / onChunkReceived 流式响应", "min_lib_version": "2.20.1" },
+    { "feature": "wx.cloud.extend.AI 云开发大模型调用", "min_lib_version": "3.15.1" }
+  ]
+}

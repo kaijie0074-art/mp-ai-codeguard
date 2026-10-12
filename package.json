@@ -1,0 +1,23 @@
+{
+  "name": "mp-ai-codeguard",
+  "version": "0.1.0",
+  "description": "AI 生成小程序代码的四层防御：上下文注入 + 编译反馈 + ESLint 门禁 + wx.* 白名单扫描（T3 模拟项目）",
+  "type": "module",
+  "scripts": {
+    "build:eslint": "node scripts/build-eslint-config.mjs",
+    "lint": "npm run build:eslint && eslint fixture-miniapp/",
+    "scan:wx": "node scripts/scan-wx-api.mjs fixture-miniapp",
+    "gate": "npm run lint && npm run scan:wx",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@eslint/js": "^9.39.5"
+  }
+}
