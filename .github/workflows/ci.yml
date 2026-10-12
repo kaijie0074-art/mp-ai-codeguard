@@ -1,0 +1,23 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  codeguard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install
+      - name: 门禁自举：违规 fixture 必须被拦（负向验证）
+        run: |
+          npx eslint fixture-miniapp/ && { echo "废弃 API 未被拦截——门禁失效"; exit 1; } || echo "✔ 拦截生效"
+          node scripts/scan-wx-api.mjs fixture-miniapp && { echo "白名单扫描未报违规——门禁失效"; exit 1; } || echo "✔ 扫描生效"
+      - name: 单一事实源同步
+        run: node scripts/build-eslint-config.mjs --check
+      - name: 负向回归测试
+        run: npm test
