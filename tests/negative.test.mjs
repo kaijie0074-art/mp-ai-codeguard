@@ -31,6 +31,18 @@ test("负向验证：废弃 API wx.getSystemInfo（异步版）同样被拦截",
   assert.equal(code, 1);
   assert.match(output, /getSystemInfo['"]?\s+自基础库/);
 });
+test("解构形式同样被拦截（评审 OB-4 验证：no-restricted-properties 覆盖解构赋值）", async () => {
+  const { writeFile, rm } = await import("node:fs/promises");
+  const tmp = join(ROOT, "fixture-miniapp", "pages", "destructure-check.tmp.js");
+  await writeFile(tmp, "const { getSystemInfoSync } = wx;\nconst info = getSystemInfoSync();\nvoid info;\n", "utf8");
+  try {
+    const { code, output } = await runExpectFail("npx", ["eslint", tmp]);
+    assert.equal(code, 1, "解构形式必须同样被拦截");
+    assert.match(output, /getSystemInfoSync/);
+  } finally {
+    await rm(tmp);
+  }
+});
 
 test("白名单扫描：编造 API（wx.setShareConfig）被识别为 unlisted", async () => {
   const findings = await scan(join(ROOT, "fixture-miniapp"));

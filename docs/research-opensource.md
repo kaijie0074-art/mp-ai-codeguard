@@ -8,14 +8,18 @@
 - 官方定位原文：*"Certain properties on objects may be disallowed in a codebase.
   **This is useful for deprecating an API** or restricting usage of a module's methods."*
 - 核心机制：`{ object, property, message }` 三元组锁定 `wx.getSystemInfoSync` 这类
-  成员访问，message 直接给替代指引——报错即文档。
+  成员访问，message 直接给替代指引——报错即文档。规则同时覆盖**解构赋值**形式
+  （`const { getSystemInfoSync } = wx`，评审 OB-4 实测验证，回归测试锁定）。
 - **借鉴点**：本仓库第 3 层门禁的主体。关键增强：**配置不手写**，由
   `scripts/build-eslint-config.mjs` 从 `deprecated-apis.json` 生成（`--check` 防漂移）——
   官方规则本身不解决「名单多处维护分叉」问题，生成器解决。
+- **生成物入库的取舍（评审 OB-2）**：`eslint.config.mjs` 选择提交进 git 而非
+  gitignore + CI 现生成——收益是 IDE 的 ESLint 插件打开仓库即生效（读不到被
+  ignore 的文件）、贡献者零引导；漂移风险由 `--check`（CI 强制）关闭。
 
 ## 2. AGENTS.md 标准（agents.md）与 llms.txt（llmstxt.site）
 
-- AGENTS.md：仓库根的 AI 编程工具规则文件事实标准（OpenAI/Codex 等工具消费）。
+- AGENTS.md：仓库根的 AI 编程工具规则文件事实标准（Codex / Claude Code 等工具消费）。
 - llms.txt：网站向 LLM 提供结构化文档索引的提案（llmstxt.site）。
 - **借鉴点**：第 1 层上下文工程。本仓库的实践是两者思想的组合：
   - `AGENTS.md` = 行为规则（禁什么、必须复述什么）；
@@ -50,6 +54,8 @@
 - 同现象：MellowCo/taroify #920、innocces/taro-hooks #81。
 - 注：原岗位问题报告引用的 TDesign #3162 本次独立检索未直接命中，以 vant-weapp
   #5903 等同因 issue 替代佐证——证据链不依赖单一仓库。
+- WXS 边界（评审 OB-3 证伪依据）：微信开放文档——WXS 为视图层纯 JS 脚本，
+  **运行环境没有 wx 对象**，不能调用小程序 API。js-only 扫描面完备。
 
 ## 机制对照表
 
