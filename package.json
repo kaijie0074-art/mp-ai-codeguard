@@ -1,7 +1,7 @@
 {
   "name": "mp-ai-codeguard",
   "version": "0.1.0",
-  "description": "AI 生成小程序代码的四层防御：上下文注入 + 编译反馈 + ESLint 门禁 + wx.* 白名单扫描（T3 模拟项目）",
+  "description": "AI 生成小程序代码的四层防御：上下文注入 + 编译反馈 + ESLint 门禁 + wx.* 白名单扫描",
   "type": "module",
   "scripts": {
     "build:eslint": "node scripts/build-eslint-config.mjs",
