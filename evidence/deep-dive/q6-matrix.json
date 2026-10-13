@@ -1,0 +1,265 @@
+{
+  "summary": {
+    "total": 10,
+    "eslint_caught": 0,
+    "eslint_rate": 0,
+    "scanner_caught": 0,
+    "scanner_rate": 0,
+    "dynamic_caught": 5,
+    "dynamic_rate": 0.5,
+    "caught_by_any": 5,
+    "bypass_rate": 0.5
+  },
+  "results": [
+    {
+      "id": "aware2-01",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": false,
+        "deprecated_hits": [],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": false
+    },
+    {
+      "id": "aware2-02",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": false,
+        "deprecated_hits": [],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": false
+    },
+    {
+      "id": "aware2-03",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": false,
+        "deprecated_hits": [],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": false
+    },
+    {
+      "id": "aware2-04",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": false,
+        "deprecated_hits": [],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": false
+    },
+    {
+      "id": "aware2-05",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名",
+          "内联拼接折叠 → \"getSystemInfoSync\" 含废弃 API 名"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware2-06",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware2-07",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": [
+          "no-unused-vars",
+          "no-unused-vars",
+          "no-unused-vars",
+          "no-unused-vars",
+          "no-unused-vars"
+        ]
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名",
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名",
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名",
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware2-08",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware2-09",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware2-10",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": false,
+        "deprecated_hits": [],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": false
+    }
+  ]
+}

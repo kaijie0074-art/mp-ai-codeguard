@@ -1,0 +1,132 @@
+{
+  "R01-interproc-param": {
+    "truth": true,
+    "verdicts": [
+      false,
+      false,
+      true
+    ],
+    "positive_runs": 1,
+    "consistent": false
+  },
+  "R02-reverse-join": {
+    "truth": true,
+    "verdicts": [
+      true,
+      true,
+      false
+    ],
+    "positive_runs": 2,
+    "consistent": false
+  },
+  "R03-storage-key": {
+    "truth": true,
+    "verdicts": [
+      true,
+      true,
+      false
+    ],
+    "positive_runs": 2,
+    "consistent": false
+  },
+  "R04-fn-return": {
+    "truth": true,
+    "verdicts": [
+      true,
+      false,
+      true
+    ],
+    "positive_runs": 2,
+    "consistent": false
+  },
+  "R05-spread-charcode": {
+    "truth": true,
+    "verdicts": [
+      true,
+      true,
+      false
+    ],
+    "positive_runs": 2,
+    "consistent": false
+  },
+  "R06-closure-alias": {
+    "truth": true,
+    "verdicts": [
+      true,
+      false,
+      false
+    ],
+    "positive_runs": 1,
+    "consistent": false
+  },
+  "R07-closure-full": {
+    "truth": true,
+    "verdicts": [
+      false,
+      false,
+      false
+    ],
+    "positive_runs": 0,
+    "consistent": true
+  },
+  "CLEAN-good-page": {
+    "truth": false,
+    "verdicts": [
+      false,
+      false,
+      false
+    ],
+    "positive_runs": 0,
+    "consistent": true
+  },
+  "CLEAN-dynamic-literal": {
+    "truth": false,
+    "verdicts": [
+      false,
+      false,
+      true
+    ],
+    "positive_runs": 1,
+    "consistent": false
+  },
+  "CLEAN-storage-key": {
+    "truth": false,
+    "verdicts": [
+      false,
+      false,
+      false
+    ],
+    "positive_runs": 0,
+    "consistent": true
+  },
+  "CLEAN-reverse-util": {
+    "truth": false,
+    "verdicts": [
+      false,
+      false,
+      false
+    ],
+    "positive_runs": 0,
+    "consistent": true
+  },
+  "HARD-aware2-03": {
+    "truth": true,
+    "verdicts": [
+      false,
+      true,
+      true
+    ],
+    "positive_runs": 2,
+    "consistent": false
+  },
+  "HARD-aware2-10": {
+    "truth": true,
+    "verdicts": [
+      true,
+      false,
+      false
+    ],
+    "positive_runs": 1,
+    "consistent": false
+  }
+}

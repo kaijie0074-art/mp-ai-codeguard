@@ -1,0 +1,1 @@
+wx.getSystemInfoSync().systemInfo.model.includes('Sync') && console.log('Device model is Sync supported');

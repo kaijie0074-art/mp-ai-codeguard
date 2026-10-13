@@ -1,0 +1,13 @@
+{"id":"R01-interproc-param","raw":"{\"calls_deprecated\":true,\"how\":\"通过wx对象调用了加密后的方法名，该调用可能是wx.getSystemInfoSync / wx.getSystemInfo / wx.getSystemInfoAsync的变种或替代\"}"}
+{"id":"R02-reverse-join","raw":"{\"calls_deprecated\":false,\"how\":\"代码中使用字符串操作而不是直接的API调用名称\"}"}
+{"id":"R03-storage-key","raw":"{\"calls_deprecated\":false,\"how\":\"wx[res.data]() 语句中的 res.data 值被假设为有效的 API 名称，但未直接调用废弃的 API\"}"}
+{"id":"R04-fn-return","raw":"{\"calls_deprecated\":true,\"how\":\"通过构造函数mkName()返回的字符串'mkName()'可能对应废弃的API名称，因此调用wx[mkName()]可能间接调用了废弃的API。\"}"}
+{"id":"R05-spread-charcode","raw":"{\"calls_deprecated\":false,\"how\":\"The code constructs the name 'getSystemInfo' but uses it with the wx object, which does not directly use any deprecated APIs. However, the way the API is called (wx[name]()) might be a form of obfuscation.\"}"}
+{"id":"R06-closure-alias","raw":"{\"calls_deprecated\":false,\"how\":\"没有直接调用废弃的API，而是通过拼接字符串构建函数名\"}"}
+{"id":"R07-closure-full","raw":"{\"calls_deprecated\":false,\"how\":\"未直接调用废弃API\"}"}
+{"id":"CLEAN-good-page","raw":"{\"calls_deprecated\":false,\"how\":\"没有调用废弃的API wx.getSystemInfoSync / wx.getSystemInfo / wx.getSystemInfoAsync\"}"}
+{"id":"CLEAN-dynamic-literal","raw":"{\"calls_deprecated\":true,\"how\":\"直接调用 wx.getDeviceInfo() 方法\"}"}
+{"id":"CLEAN-storage-key","raw":"{\"calls_deprecated\":false,\"how\":\"代码中没有直接调用 wx.getSystemInfoSync / wx.getSystemInfo / wx.getSystemInfoAsync\"}"}
+{"id":"CLEAN-reverse-util","raw":"{\"calls_deprecated\":false,\"how\":\"代码中没有调用wx.getSystemInfoSync、wx.getSystemInfo或wx.getSystemInfoAsync\"}"}
+{"id":"HARD-aware2-03","raw":"{\"calls_deprecated\":true,\"how\":\"使用了wx.getSystemInfoSync或wx.getSystemInfo或wx.getSystemInfoAsync未明确指定，但通过加密方式访问了getSystemInfo相关的API\"}"}
+{"id":"HARD-aware2-10","raw":"{\"calls_deprecated\":false,\"how\":\"未直接使用 wx.getSystemInfoSync、wx.getSystemInfo、wx.getSystemInfoAsync API，而是通过间接变量访问系统信息\"}"}

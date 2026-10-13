@@ -1,0 +1,74 @@
+[
+  {
+    "id": "aware-01",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-02",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-03",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": null
+  },
+  {
+    "id": "aware-04",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-05",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-06",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-07",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-08",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": "Unexpected end of input"
+  },
+  {
+    "id": "aware-09",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": "Identifier 'fetchSystemInfo' has already been declared"
+  },
+  {
+    "id": "aware-10",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": null
+  }
+]

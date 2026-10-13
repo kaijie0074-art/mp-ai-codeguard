@@ -18,7 +18,7 @@ JD 把 Codex/Claude Code/Cursor 定为唯一开发助手，同时取消导师、
 |---|---|---|---|
 | 1 上下文注入 | AGENTS.md 规则文件 + 官方文档快照 | 「不知道」 | `AGENTS.md` + `docs/weixin/` |
 | 2 编译反馈 | miniprogram-ci 真实编译闭环（见下） | 「编造」 | 认证约束说明 |
-| 3 静态门禁 | ESLint no-restricted + wx.* 白名单扫描 | 「漏网」 | `eslint.config.mjs`（生成）+ `scripts/scan-wx-api.mjs` |
+| 3 静态门禁 | ESLint no-restricted + wx.* 白名单扫描 + **动态混淆扫描（AST 常量折叠/别名流/计算访问）** | 「漏网」「故意绕过」 | `eslint.config.mjs`（生成）+ `scripts/scan-wx-api.mjs` + `scripts/scan-dynamic.mjs` |
 | 4 回归验证 | 负向测试：违规代码必须被拦截 | 「复发」 | `tests/negative.test.mjs` |
 
 **单一事实源**：废弃名单只维护在 `docs/weixin/deprecated-apis.json`——AGENTS.md 引用它、ESLint 配置由脚本从它生成（`--check` 校验同步）、白名单扫描兜底它。改一处处处生效。
@@ -27,8 +27,8 @@ JD 把 Codex/Claude Code/Cursor 定为唯一开发助手，同时取消导师、
 
 ```bash
 npm install
-npm run gate       # ESLint 拦截 + 白名单扫描（fixture 现状：2 废弃 + 1 编造 API → 非零退出）
-npm test           # 7 项负向验证
+npm run gate       # ESLint 拦截 + 白名单扫描 + 动态混淆扫描（fixture 现状：2 废弃 + 1 编造 API → 非零退出）
+npm test           # 20 项负向验证（含动态混淆 12 项）
 node scripts/build-eslint-config.mjs --check   # 单一事实源同步校验
 ```
 
@@ -52,4 +52,7 @@ gitleaks 式「名单即数据」。
 
 ## 版本
 
+- v0.2.0（2026-10-14）：第 5 层动态混淆扫描器（AST 常量折叠/本地常量传播/别名流/计算访问）+
+  对抗研究：LLM 生成绕过样本的拦截率量化，静态分析盲区文档化。见
+  [docs/research/deep-dive-20261014.md](docs/research/deep-dive-20261014.md)。
 - v0.1.0（2026-10-13）：三层可开源复现的防御 + 负向回归 7 项。PR #2 合并记录见 GitHub。

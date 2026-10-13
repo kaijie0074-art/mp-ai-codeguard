@@ -1,0 +1,74 @@
+[
+  {
+    "id": "blind-01",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "blind-02",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "blind-03",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": null
+  },
+  {
+    "id": "blind-04",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "blind-05",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": null
+  },
+  {
+    "id": "blind-06",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": null
+  },
+  {
+    "id": "blind-07",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": null
+  },
+  {
+    "id": "blind-08",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "blind-09",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "blind-10",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  }
+]

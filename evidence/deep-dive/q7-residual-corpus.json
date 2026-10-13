@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "purpose": "Q7 残余盲区：单文件 AST 启发式（无跨过程数据流、折叠算子有限）理论上无法覆盖的变体。每个都真实调用 wx.getSystemInfoSync。",
+    "created": "2026-10-14",
+    "design": "全绕过需要同时满足：(a) wx 不作为被访问对象出现（跨过程参数/返回值/闭包流，别名分析失明）；(b) 键名构造不可折叠（reverse/rot13 等可逆变换不在折叠算子集内）。只满足其一的（R02/R03/R05）会被 wx-computed review 级拦住。",
+    "root_causes": {
+      "R01": "跨过程参数流：wx 经函数参数传递，单文件别名分析不跟踪形参",
+      "R02": "不可折叠变换 + 直接 wx[...]：变换折叠不了，但计算访问被 review 级拦下",
+      "R03": "运行时来源 + 直接 wx[...]：键名来自 getStorage 静态不可知，但 wx[res.data] 被 review 级拦下",
+      "R04": "跨过程返回值 + 不可折叠键名：wx 与键名双双间接化——全绕过",
+      "R05": "展开字符码 + 直接 wx[...]：spread 使 fromCharCode 折叠失败，但 wx[name] 被 review 级拦下",
+      "R06": "闭包参数流 + 变量数组 join：api 是形参（对象侧失明），parts 是变量引用（键名侧折叠需数组字面量内联）——实测全绕过",
+      "R07": "闭包流 + 不可折叠键名——全绕过"
+    }
+  },
+  "variants": [
+    { "id": "R01-interproc-param", "category": "跨过程参数流", "code": "function invoke(o, k) {\n  return o[k]();\n}\nconst name = 'cnySofnImetsySteg'.split('').reverse().join('');\nconst info = invoke(wx, name);\nconsole.log(info);" },
+    { "id": "R02-reverse-join", "category": "不可折叠变换(直接访问)", "code": "const name = 'cnySofnImetsySteg'.split('').reverse().join('');\nconst info = wx[name]();\nconsole.log(info);" },
+    { "id": "R03-storage-key", "category": "运行时来源(直接访问)", "code": "wx.getStorage({\n  key: 'api_name',\n  success: (res) => {\n    const info = wx[res.data]();\n    console.log(info);\n  }\n});" },
+    { "id": "R04-fn-return", "category": "跨过程返回值", "code": "function getCtx() {\n  return wx;\n}\nfunction mkName() {\n  return 'cnySofnImetsySteg'.split('').reverse().join('');\n}\nconst w = getCtx();\nconst info = w[mkName()]();\nconsole.log(info);" },
+    { "id": "R05-spread-charcode", "category": "展开字符码(直接访问)", "code": "const codes = [103, 101, 116, 83, 121, 115, 116, 101, 109, 73, 110, 102, 111, 83, 121, 110, 99];\nconst name = String.fromCharCode(...codes);\nconst info = wx[name]();\nconsole.log(info);" },
+    { "id": "R06-closure-alias", "category": "闭包参数流", "code": "function withApi(cb) {\n  cb(wx);\n}\nwithApi((api) => {\n  const parts = ['get', 'System', 'Info', 'Sync'];\n  const info = api[parts.join('')]();\n  console.log(info);\n});" },
+    { "id": "R07-closure-full", "category": "闭包全间接", "code": "function withApi(cb) {\n  cb(wx);\n}\nwithApi((api) => {\n  const name = 'cnySofnImetsySteg'.split('').reverse().join('');\n  const info = api[name]();\n  console.log(info);\n});" }
+  ]
+}

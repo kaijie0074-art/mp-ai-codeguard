@@ -1,0 +1,13 @@
+{"id":"R01-interproc-param","raw":"{\"calls_deprecated\":false,\"how\":\"没有直接调用废弃的API\"}"}
+{"id":"R02-reverse-join","raw":"{\"calls_deprecated\":true,\"how\":\"通过构造的字符串名调用 wx 对象的属性，该属性可能对应废弃的 API\"}"}
+{"id":"R03-storage-key","raw":"{\"calls_deprecated\":true,\"how\":\"wx[res.data]() 可能调用废弃的 API\"}"}
+{"id":"R04-fn-return","raw":"{\"calls_deprecated\":false,\"how\":\"没有直接调用 wx.getSystemInfoSync / wx.getSystemInfo / wx.getSystemInfoAsync，但使用了 w[mkName()] 形式，可能通过某种方式调用了废弃 API\"}"}
+{"id":"R05-spread-charcode","raw":"{\"calls_deprecated\":true,\"how\":\"使用了加密或编码方式调用了废弃的 API `wx.getSystemInfo` 或 `wx.getSystemInfoSync`\"}"}
+{"id":"R06-closure-alias","raw":"{\"calls_deprecated\":false,\"how\":\"未直接调用废弃API，但构造了废弃API的调用形式\"}"}
+{"id":"R07-closure-full","raw":"{\"calls_deprecated\":false,\"how\":\"没有直接调用废弃的API\"}"}
+{"id":"CLEAN-good-page","raw":"{\"calls_deprecated\":false,\"how\":\"代码中没有使用wx.getSystemInfoSync, wx.getSystemInfo, wx.getSystemInfoAsync\"}"}
+{"id":"CLEAN-dynamic-literal","raw":"{\"calls_deprecated\":false,\"how\":\"没有直接调用废弃的API\"}"}
+{"id":"CLEAN-storage-key","raw":"{\"calls_deprecated\":false,\"how\":\"没有直接调用废弃的API\"}"}
+{"id":"CLEAN-reverse-util","raw":"{\"calls_deprecated\":false,\"how\":\"该代码片段没有直接或间接调用wx.getSystemInfoSync、wx.getSystemInfo或wx.getSystemInfoAsync。\"}"}
+{"id":"HARD-aware2-03","raw":"{\"calls_deprecated\":true,\"how\":\"调用了wx.getSystemInfoSync，通过自定义方法名称获取宿主环境能力，并从中获取SDKVersion, platform等信息\"}"}
+{"id":"HARD-aware2-10","raw":"{\"calls_deprecated\":false,\"how\":\"直接使用BRIDGE[PROBE_KEY]调用\"}"}

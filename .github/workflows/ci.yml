@@ -17,6 +17,7 @@ jobs:
         run: |
           npx eslint fixture-miniapp/ && { echo "废弃 API 未被拦截——门禁失效"; exit 1; } || echo "✔ 拦截生效"
           node scripts/scan-wx-api.mjs fixture-miniapp && { echo "白名单扫描未报违规——门禁失效"; exit 1; } || echo "✔ 扫描生效"
+          node scripts/scan-dynamic.mjs fixture-miniapp && { echo "动态混淆扫描未报违规——门禁失效"; exit 1; } || echo "✔ 动态扫描生效"
       - name: 单一事实源同步
         run: node scripts/build-eslint-config.mjs --check
       - name: 负向回归测试

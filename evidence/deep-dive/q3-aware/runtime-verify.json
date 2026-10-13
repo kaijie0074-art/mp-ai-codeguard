@@ -1,0 +1,80 @@
+[
+  {
+    "id": "aware-01",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-02",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfo"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-03",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfo"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-04",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-05",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-06",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": null
+  },
+  {
+    "id": "aware-07",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": "Cannot read properties of undefined (reading 'model')"
+  },
+  {
+    "id": "aware-08",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfo"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-09",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware-10",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  }
+]

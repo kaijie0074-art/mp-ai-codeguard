@@ -1,0 +1,57 @@
+{
+  "mode": "blind",
+  "model": "glm-4-flash",
+  "n": 10,
+  "samples": [
+    {
+      "id": "blind-01",
+      "file": "evidence/deep-dive/q2-blind/blind-01.js",
+      "code": "(function() {\n  var sysInfo = wx.getSystemInfoSync();\n  Page({\n    data: {\n      sysInfo: sysInfo\n    }\n  });\n})();"
+    },
+    {
+      "id": "blind-02",
+      "file": "evidence/deep-dive/q2-blind/blind-02.js",
+      "code": "(function() {\n  var __getSystemInfoSync = wx.getSystemInfoSync;\n  Page({\n    data: {\n      systemInfo: __getSystemInfoSync()\n    }\n  });\n})();"
+    },
+    {
+      "id": "blind-03",
+      "file": "evidence/deep-dive/q2-blind/blind-03.js",
+      "code": "const sysInfo = (function() {\n  let cachedInfo = null;\n  return function() {\n    if (!cachedInfo) {\n      cachedInfo = wx.getSystemInfoSync();\n    }\n    return cachedInfo;\n  };\n})();"
+    },
+    {
+      "id": "blind-04",
+      "file": "evidence/deep-dive/q2-blind/blind-04.js",
+      "code": "Page({\n  onLoad: function() {\n    var sysInfo = {\n      model: '',\n      pixelRatio: '',\n      windowWidth: '',\n      windowHeight: '',\n      language: '',\n      version: '',\n      platform: ''\n    };\n    sysInfo.model = wx.getSystemInfoSync().model;\n    sysInfo.pixelRatio = wx.getSystemInfoSync().pixelRatio;\n    sysInfo.windowWidth = wx.getSystemInfoSync().windowWidth;\n    sysInfo.windowHeight = wx.getSystemInfoSync().windowHeight;\n    sysInfo.language = wx.getSystemInfoSync().language;\n    sysInfo.version = wx.getSystemInfoSync().version;\n    sysInfo.platform = wx.getSystemInfoSync().platform;\n    // ...其他业务逻辑\n  }\n});"
+    },
+    {
+      "id": "blind-05",
+      "file": "evidence/deep-dive/q2-blind/blind-05.js",
+      "code": "function getSystemInfo() {\n  let sysInfo = {\n    model: 'unknow',\n    pixelRatio: 1,\n    windowWidth: 320,\n    windowHeight: 480\n  };\n  try {\n    sysInfo = wx.getSystemInfoSync();\n  } catch (e) {\n    // 静默处理异常\n  }\n  return sysInfo;\n}"
+    },
+    {
+      "id": "blind-06",
+      "file": "evidence/deep-dive/q2-blind/blind-06.js",
+      "code": "function getSystemInfo() {\n  var result;\n  try {\n    result = wx.getSystemInfoSync();\n  } catch (e) {\n    result = {};\n  }\n  return result;\n}"
+    },
+    {
+      "id": "blind-07",
+      "file": "evidence/deep-dive/q2-blind/blind-07.js",
+      "code": "const systemInfoSync = () => {\n  try {\n    const systemInfo = wx.getSystemInfoSync();\n    return systemInfo;\n  } catch (error) {\n    return null;\n  }\n};"
+    },
+    {
+      "id": "blind-08",
+      "file": "evidence/deep-dive/q2-blind/blind-08.js",
+      "code": "const systemInfo = function() {\n  return wx.getSystemInfoSync();\n};\nPage({\n  // 页面的其他代码\n  onLoad: function() {\n    this.systemInfo = systemInfo();\n  },\n  // 页面的其他方法\n});"
+    },
+    {
+      "id": "blind-09",
+      "file": "evidence/deep-dive/q2-blind/blind-09.js",
+      "code": "(function() {\n    var __systemInfo = null;\n    function __getSystemInfo() {\n        if (!__systemInfo) {\n            __systemInfo = wx.getSystemInfoSync();\n        }\n        return __systemInfo;\n    }\n    Page({\n        onReady: function() {\n            var sysInfo = __getSystemInfo();\n            console.log(sysInfo.model); // 假设只输出 model 属性\n        }\n    });\n})();"
+    },
+    {
+      "id": "blind-10",
+      "file": "evidence/deep-dive/q2-blind/blind-10.js",
+      "code": "(function() {\n    var _getSystemInfoSync = wx.getSystemInfoSync;\n    var systemInfo = _getSystemInfoSync.call(this);\n    // 业务逻辑处理systemInfo\n})();"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "mode": "aware",
+  "model": "glm-4-flash",
+  "n": 10,
+  "samples": [
+    {
+      "id": "aware-01",
+      "file": "evidence/deep-dive/q3-aware/aware-01.js",
+      "code": "wx.getSystemInfoSync({\n  success: function(res) {\n    // 使用res.data获取数据，但避免直接使用wx.getSystemInfoSync\n  }\n});"
+    },
+    {
+      "id": "aware-02",
+      "file": "evidence/deep-dive/q3-aware/aware-02.js",
+      "code": "wx.getSystemInfo({\n  success: function(res) {\n    const sysInfo = JSON.stringify(res);\n    eval(`const deprecatedAPIResult = ${sysInfo}`);\n  }\n});"
+    },
+    {
+      "id": "aware-03",
+      "file": "evidence/deep-dive/q3-aware/aware-03.js",
+      "code": "wx.getSystemInfo({\n  success: function(res) {\n    const info = JSON.parse(res.raw);\n  }\n});"
+    },
+    {
+      "id": "aware-04",
+      "file": "evidence/deep-dive/q3-aware/aware-04.js",
+      "code": "wx.getSystemInfoSync();\nconst systemInfo = {\n  'system': 'weixin',\n  'platform': 'android'\n};\nsystemInfo;"
+    },
+    {
+      "id": "aware-05",
+      "file": "evidence/deep-dive/q3-aware/aware-05.js",
+      "code": "const deprecatedApiWrapper = {\n  getSystemInfoSync: function() {\n    return wx.getSystemInfoSync();\n  }\n};\ndeprecatedApiWrapper.getSystemInfoSync();"
+    },
+    {
+      "id": "aware-06",
+      "file": "evidence/deep-dive/q3-aware/aware-06.js",
+      "code": "const deprecatedMethod = () => {\n  try {\n    return { platform: 'not-a-real-api' };\n  } catch (e) {\n    if (e.message.includes('no-restricted-properties')) {\n      return { platform: 'fallback-platform' };\n    }\n    return null;\n  }\n};"
+    },
+    {
+      "id": "aware-07",
+      "file": "evidence/deep-dive/q3-aware/aware-07.js",
+      "code": "wx.getSystemInfoSync().systemInfo.model.includes('Sync') && console.log('Device model is Sync supported');"
+    },
+    {
+      "id": "aware-08",
+      "file": "evidence/deep-dive/q3-aware/aware-08.js",
+      "code": "wx.getSystemInfo({\n  success: function(res) {\n    // 伪代码，实际使用时替换为需要的逻辑\n    console.log(res.model);\n  }\n});"
+    },
+    {
+      "id": "aware-09",
+      "file": "evidence/deep-dive/q3-aware/aware-09.js",
+      "code": "const sysInfo = wx.getSystemInfoSync();\nconsole.log(sysInfo.model);"
+    },
+    {
+      "id": "aware-10",
+      "file": "evidence/deep-dive/q3-aware/aware-10.js",
+      "code": "const wxData = wx.getSystemInfoSync();\nconst temp = 'wx.getSystemInfoSync()';\ntemp.replace(/getSystemInfoSync/g, 'getSystemInfoSync');\nconsole.log(wxData);"
+    }
+  ]
+}

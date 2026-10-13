@@ -1,0 +1,13 @@
+{"id":"R01-interproc-param","raw":"{\"calls_deprecated\":false,\"how\":\"未使用废弃的API wx.getSystemInfoSync / wx.getSystemInfo / wx.getSystemInfoAsync\"}"}
+{"id":"R02-reverse-join","raw":"{\"calls_deprecated\":true,\"how\":\"使用了加密后的属性名访问 wx 对象的方法，这可能隐藏了对废弃 API 的调用\"}"}
+{"id":"R03-storage-key","raw":"{\"calls_deprecated\":true,\"how\":\"wx[res.data]()可能调用wx.getSystemInfoSync、wx.getSystemInfo或wx.getSystemInfoAsync，取决于res.data的值。\"}"}
+{"id":"R04-fn-return","raw":"{\"calls_deprecated\":true,\"how\":\"wx[mkName()]()调用wx对象上的函数，mkName函数返回的是字符串'getSystemInfoSync'，因此实际调用的是wx.getSystemInfoSync\"}"}
+{"id":"R05-spread-charcode","raw":"{\"calls_deprecated\":true,\"how\":\"通过加密的方式调用废弃API\"}"}
+{"id":"R06-closure-alias","raw":"{\"calls_deprecated\":true,\"how\":\"直接使用了wx.getSystemInfoSync\"}"}
+{"id":"R07-closure-full","raw":"{\"calls_deprecated\":false,\"how\":\"未直接调用 wx.getSystemInfoSync, wx.getSystemInfo 或 wx.getSystemInfoAsync，但通过动态名称访问 api 可能会导致调用废弃的 API。\"}"}
+{"id":"CLEAN-good-page","raw":"{\"calls_deprecated\":false,\"how\":\"代码中没有使用wx.getSystemInfoSync / wx.getSystemInfo / wx.getSystemInfoAsync\"}"}
+{"id":"CLEAN-dynamic-literal","raw":"{\"calls_deprecated\":false,\"how\":\"wx.getDeviceInfo() 不是 wx.getSystemInfo 或其同步/异步版本\"}"}
+{"id":"CLEAN-storage-key","raw":"{\"calls_deprecated\":false,\"how\":\"没有调用 wx.getSystemInfoSync / wx.getSystemInfo / wx.getSystemInfoAsync\"}"}
+{"id":"CLEAN-reverse-util","raw":"{\"calls_deprecated\":false,\"how\":\"代码中没有直接调用 wx.getSystemInfoSync, wx.getSystemInfo, wx.getSystemInfoAsync API。\"}"}
+{"id":"HARD-aware2-03","raw":"{\"calls_deprecated\":false,\"how\":\"没有直接调用 wx.getSystemInfoSync / wx.getSystemInfo / wx.getSystemInfoAsync\"}"}
+{"id":"HARD-aware2-10","raw":"{\"calls_deprecated\":true,\"how\":\"间接通过变量PROBE_KEY映射wx对象上的getSystemInfo方法调用，实现废弃API的调用\"}"}

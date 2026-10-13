@@ -7,7 +7,8 @@
     "build:eslint": "node scripts/build-eslint-config.mjs",
     "lint": "npm run build:eslint && eslint fixture-miniapp/",
     "scan:wx": "node scripts/scan-wx-api.mjs fixture-miniapp",
-    "gate": "npm run lint && npm run scan:wx",
+    "scan:dyn": "node scripts/scan-dynamic.mjs fixture-miniapp",
+    "gate": "npm run lint && npm run scan:wx && npm run scan:dyn",
     "test": "node --test tests/*.test.mjs"
   },
   "devDependencies": {

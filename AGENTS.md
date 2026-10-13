@@ -19,8 +19,12 @@
 3. **基础库门槛必须显式声明**：流式响应（enableChunked/onChunkReceived）≥ 2.20.1；
    云开发 AI（wx.cloud.extend.AI）≥ 3.15.1。代码用到哪个门槛，app.json /
    project.config.json 必须一致，并写低版本降级路径。
-4. **每个改动跑门禁**：`npm run gate`（ESLint 废弃 API 拦截 + wx.* 白名单扫描），
+4. **每个改动跑门禁**：`npm run gate`（ESLint 废弃 API 拦截 + wx.* 白名单扫描 + 动态混淆扫描），
    红了不许提交。CI 同样强制。
+5. **禁止动态构造废弃 API 调用**：字符串拼接/join/fromCharCode 构造 API 名、别名变量、
+   Proxy/Reflect 包装，都会被 `scripts/scan-dynamic.mjs` 拦下；经函数参数/返回值间接化传 wx
+   是静态分析已知盲区（docs/research/deep-dive-20261014.md Q7），属于恶意规避——
+   代码评审看到一律打回。
 
 ## 工作流
 

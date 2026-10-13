@@ -1,0 +1,76 @@
+[
+  {
+    "id": "aware2-01",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware2-02",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": null
+  },
+  {
+    "id": "aware2-03",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware2-04",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware2-05",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware2-06",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": null
+  },
+  {
+    "id": "aware2-07",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": "Cannot read properties of undefined (reading 'value')"
+  },
+  {
+    "id": "aware2-08",
+    "runtime_invoked_deprecated": false,
+    "invoked": [],
+    "error": null
+  },
+  {
+    "id": "aware2-09",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  },
+  {
+    "id": "aware2-10",
+    "runtime_invoked_deprecated": true,
+    "invoked": [
+      "getSystemInfoSync"
+    ],
+    "error": null
+  }
+]

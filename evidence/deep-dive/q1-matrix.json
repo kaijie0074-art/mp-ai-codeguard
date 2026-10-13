@@ -1,0 +1,416 @@
+{
+  "summary": {
+    "total": 15,
+    "eslint_caught": 4,
+    "eslint_rate": 0.267,
+    "scanner_caught": 4,
+    "scanner_rate": 0.267,
+    "dynamic_caught": 13,
+    "dynamic_rate": 0.867,
+    "caught_by_any": 15,
+    "bypass_rate": 0
+  },
+  "results": [
+    {
+      "id": "V01-direct",
+      "category": "静态成员访问",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-restricted-properties"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "静态访问 .getSystemInfoSync（对象：wx）——该成员名只应存在于 wx，请核实对象来源"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V02-destructure",
+      "category": "解构",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-restricted-properties"
+        ]
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": false,
+        "deprecated_hits": [],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V03-alias-var",
+      "category": "别名变量",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "静态访问 .getSystemInfoSync（对象：w）——该成员名只应存在于 wx，请核实对象来源"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V04-computed-literal",
+      "category": "字面量计算访问",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-restricted-properties"
+        ]
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "计算访问 wx[...] 常量折叠 → 'getSystemInfoSync'（废弃 API）",
+          "字符串字面量恰为废弃 API 名 'getSystemInfoSync'"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V05-string-concat",
+      "category": "字符串拼接",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "计算访问 wx[...] 常量折叠 → 'getSystemInfoSync'（废弃 API）",
+          "内联拼接折叠 → \"getSystemInfoSync\" 含废弃 API 名",
+          "字符串字面量恰为废弃 API 名 'getSystemInfo'"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V06-dynamic-var",
+      "category": "动态变量构造",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "计算访问 wx[...] 常量折叠 → 'getSystemInfoSync'（废弃 API）",
+          "内联拼接折叠 → \"getSystemInfoSync\" 含废弃 API 名",
+          "内联拼接折叠 → \"getSystemInfo\" 含废弃 API 名"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V07-method-ref",
+      "category": "方法引用取出",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-restricted-properties"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "静态访问 .getSystemInfoSync（对象：wx）——该成员名只应存在于 wx，请核实对象来源"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V08-require-alias",
+      "category": "require 别名",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [],
+        "computed_hits": [],
+        "review_hits": [
+          "静态访问 .getSystemInfoSync（对象：表达式）——该成员名只应存在于 wx，请核实对象来源"
+        ],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V085-fragment-join",
+      "category": "分片重组",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名",
+          "计算访问 wx[...] 常量折叠 → 'getSystemInfoSync'（废弃 API）"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V09-proxy",
+      "category": "Proxy 包装",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [],
+        "computed_hits": [
+          "Proxy/Reflect 包装 wx——间接访问需人工放行"
+        ],
+        "review_hits": [
+          "静态访问 .getSystemInfoSync（对象：p）——该成员名只应存在于 wx，请核实对象来源"
+        ],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V10-reflect",
+      "category": "Reflect 动态取值",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "内联拼接折叠 → \"getSystemInfoSync\" 含废弃 API 名",
+          "字符串字面量恰为废弃 API 名 'getSystemInfo'"
+        ],
+        "computed_hits": [
+          "Proxy/Reflect 包装 wx——间接访问需人工放行"
+        ],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V11-keys-find",
+      "category": "键名枚举探测",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [],
+        "computed_hits": [
+          "计算访问 wx[...]——动态属性无法静态审计，需人工放行（codeguard: allow）"
+        ],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V12-eval",
+      "category": "eval 执行",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": false,
+        "deprecated_hits": [],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V13-charcode",
+      "category": "字符码构造",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名",
+          "计算访问 wx[...] 常量折叠 → 'getSystemInfoSync'（废弃 API）"
+        ],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "V14-base64",
+      "category": "base64 编码",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": [
+          "wx.base64ToArrayBuffer"
+        ]
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [],
+        "computed_hits": [
+          "计算访问 wx[...]——动态属性无法静态审计，需人工放行（codeguard: allow）"
+        ],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    }
+  ]
+}

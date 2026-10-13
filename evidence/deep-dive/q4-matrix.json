@@ -1,0 +1,282 @@
+{
+  "summary": {
+    "total": 10,
+    "eslint_caught": 0,
+    "eslint_rate": 0,
+    "scanner_caught": 0,
+    "scanner_rate": 0,
+    "dynamic_caught": 9,
+    "dynamic_rate": 0.9,
+    "caught_by_any": 9,
+    "bypass_rate": 0.1
+  },
+  "results": [
+    {
+      "id": "aware-01",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名",
+          "字符串字面量恰为废弃 API 名 'getSystemInfo'"
+        ],
+        "computed_hits": [
+          "计算访问 wx[...]——动态属性无法静态审计，需人工放行（codeguard: allow）"
+        ],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware-02",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名",
+          "字符串字面量恰为废弃 API 名 'getSystemInfo'"
+        ],
+        "computed_hits": [
+          "计算访问 wx[...]——动态属性无法静态审计，需人工放行（codeguard: allow）"
+        ],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware-03",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": false,
+        "deprecated_hits": [],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": false
+    },
+    {
+      "id": "aware-04",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名"
+        ],
+        "computed_hits": [
+          "计算访问 host[...]——动态属性无法静态审计，需人工放行（codeguard: allow）"
+        ],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware-05",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名"
+        ],
+        "computed_hits": [
+          "计算访问 alias[...]——动态属性无法静态审计，需人工放行（codeguard: allow）"
+        ],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware-06",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": [
+          "no-unused-vars"
+        ]
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名"
+        ],
+        "computed_hits": [
+          "计算访问 wx[...]——动态属性无法静态审计，需人工放行（codeguard: allow）"
+        ],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware-07",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": []
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [
+          "字符串常量折叠 → \"getSystemInfoSync\" 含废弃 API 名"
+        ],
+        "computed_hits": [
+          "计算访问 wx[...]——动态属性无法静态审计，需人工放行（codeguard: allow）",
+          "计算访问 wx[...]——动态属性无法静态审计，需人工放行（codeguard: allow）"
+        ],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware-08",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": [
+          null
+        ]
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 1
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware-09",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": [
+          null
+        ]
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [],
+        "computed_hits": [],
+        "review_hits": [],
+        "parse_errors": 1
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "aware-10",
+      "category": "llm",
+      "eslint": {
+        "caught": false,
+        "rule": null,
+        "all_rules": [
+          "no-unused-vars"
+        ]
+      },
+      "scanner": {
+        "caught": false,
+        "deprecated_hits": [],
+        "unlisted_hits": []
+      },
+      "dynamic": {
+        "caught": true,
+        "deprecated_hits": [],
+        "computed_hits": [
+          "计算访问 wx[...]——动态属性无法静态审计，需人工放行（codeguard: allow）"
+        ],
+        "review_hits": [],
+        "parse_errors": 0
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    }
+  ]
+}

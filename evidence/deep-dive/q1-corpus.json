@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "purpose": "Q1 基线：废弃 API wx.getSystemInfoSync 的静态可见性变体分类学（人工构造，非 LLM 生成）",
+    "each": "variants[] 每项是一段完整可 lint 的 JS，语义上都会调用/引用废弃 API",
+    "created": "2026-10-14"
+  },
+  "variants": [
+    { "id": "V01-direct", "category": "静态成员访问", "code": "const info = wx.getSystemInfoSync();\nconsole.log(info);" },
+    { "id": "V02-destructure", "category": "解构", "code": "const { getSystemInfoSync } = wx;\nconst info = getSystemInfoSync();\nconsole.log(info);" },
+    { "id": "V03-alias-var", "category": "别名变量", "code": "const w = wx;\nconst info = w.getSystemInfoSync();\nconsole.log(info);" },
+    { "id": "V04-computed-literal", "category": "字面量计算访问", "code": "const info = wx['getSystemInfoSync']();\nconsole.log(info);" },
+    { "id": "V05-string-concat", "category": "字符串拼接", "code": "const info = wx['getSystemInfo' + 'Sync']();\nconsole.log(info);" },
+    { "id": "V06-dynamic-var", "category": "动态变量构造", "code": "const part = 'SystemInfo';\nconst info = wx['get' + part + 'Sync']();\nconsole.log(info);" },
+    { "id": "V07-method-ref", "category": "方法引用取出", "code": "const api = wx.getSystemInfoSync;\nconst info = api.call(wx);\nconsole.log(info);" },
+    { "id": "V08-require-alias", "category": "require 别名", "code": "const ctx = require('./app.js');\nconst info = ctx.wx.getSystemInfoSync();\nconsole.log(info);" },
+    { "id": "V085-fragment-join", "category": "分片重组", "code": "const name = ['get', 'System', 'Info', 'Sync'].join('');\nconst info = wx[name]();\nconsole.log(info);" },
+    { "id": "V09-proxy", "category": "Proxy 包装", "code": "const p = new Proxy(wx, {});\nconst info = p.getSystemInfoSync();\nconsole.log(info);" },
+    { "id": "V10-reflect", "category": "Reflect 动态取值", "code": "const fn = Reflect.get(wx, 'getSystemInfo' + 'Sync');\nconst info = fn.call(wx);\nconsole.log(info);" },
+    { "id": "V11-keys-find", "category": "键名枚举探测", "code": "const key = Object.keys(wx).find(k => k.includes('SystemInfo') && k.endsWith('Sync'));\nconst info = wx[key]();\nconsole.log(info);" },
+    { "id": "V12-eval", "category": "eval 执行", "code": "const info = eval(\"wx.getSystemInfoSync()\");\nconsole.log(info);" },
+    { "id": "V13-charcode", "category": "字符码构造", "code": "const name = String.fromCharCode(103,101,116,83,121,115,116,101,109,73,110,102,111,83,121,110,99);\nconst info = wx[name]();\nconsole.log(info);" },
+    { "id": "V14-base64", "category": "base64 编码", "code": "const bytes = wx.base64ToArrayBuffer('Z2V0U3lzdGVtSW5mb1N5bmM=');\nconst name = Array.from(new Uint8Array(bytes), b => String.fromCharCode(b)).join('');\nconst info = wx[name]();\nconsole.log(info);" }
+  ]
+}

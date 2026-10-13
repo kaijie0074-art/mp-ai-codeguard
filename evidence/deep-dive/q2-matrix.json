@@ -1,0 +1,227 @@
+{
+  "summary": {
+    "total": 10,
+    "eslint_caught": 10,
+    "eslint_rate": 1,
+    "scanner_caught": 10,
+    "scanner_rate": 1,
+    "caught_by_any": 10,
+    "bypass_rate": 0
+  },
+  "results": [
+    {
+      "id": "blind-01",
+      "category": "llm",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-restricted-properties"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "blind-02",
+      "category": "llm",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-restricted-properties"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "blind-03",
+      "category": "llm",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-unused-vars",
+          "no-restricted-properties"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "blind-04",
+      "category": "llm",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-restricted-properties",
+          "no-restricted-properties",
+          "no-restricted-properties",
+          "no-restricted-properties",
+          "no-restricted-properties",
+          "no-restricted-properties",
+          "no-restricted-properties"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "blind-05",
+      "category": "llm",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-unused-vars",
+          "no-restricted-properties",
+          "no-unused-vars"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "blind-06",
+      "category": "llm",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-unused-vars",
+          "no-restricted-properties",
+          "no-unused-vars"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "blind-07",
+      "category": "llm",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-unused-vars",
+          "no-restricted-properties",
+          "no-unused-vars"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "blind-08",
+      "category": "llm",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-restricted-properties"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "blind-09",
+      "category": "llm",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-restricted-properties"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    },
+    {
+      "id": "blind-10",
+      "category": "llm",
+      "eslint": {
+        "caught": true,
+        "rule": "no-restricted-properties",
+        "all_rules": [
+          "no-restricted-properties",
+          "no-unused-vars"
+        ]
+      },
+      "scanner": {
+        "caught": true,
+        "deprecated_hits": [
+          "wx.getSystemInfoSync"
+        ],
+        "unlisted_hits": []
+      },
+      "related_signals": [],
+      "caught_by_any": true
+    }
+  ]
+}
